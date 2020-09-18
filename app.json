@@ -48,7 +48,8 @@
         "SLACK_HOOK": {
             "description": "Used to send error messages to your Slack team when the API catches an error",
             "value": "https://hooks.slack.com/services/your-api-key"
-        }
+        },
+        "DATABASE": "mongodb+srv://<user>:<password>@<host>?retryWrites=true&w=majority"
     },
     "addons": [
         "mLab"
