@@ -123,6 +123,8 @@ angular.module('reg')
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
           _updateUser();
+        } else {
+          swal("Uh oh!", "Something went wrong.", "error");
         }
       };
 
