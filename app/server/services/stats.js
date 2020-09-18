@@ -57,14 +57,14 @@ function calculateStats(){
 
     dietaryRestrictions: {},
 
-    hostNeededFri: 0,
-    hostNeededSat: 0,
-    hostNeededUnique: 0,
+    // hostNeededFri: 0,
+    // hostNeededSat: 0,
+    // hostNeededUnique: 0,
 
-    hostNeededFemale: 0,
-    hostNeededMale: 0,
-    hostNeededOther: 0,
-    hostNeededNone: 0,
+    // hostNeededFemale: 0,
+    // hostNeededMale: 0,
+    // hostNeededOther: 0,
+    // hostNeededNone: 0,
 
     // reimbursementTotal: 0,
     // reimbursementMissing: 0,
@@ -157,18 +157,18 @@ function calculateStats(){
         }
 
         // Host needed counts
-        newStats.hostNeededFri += user.confirmation.hostNeededFri ? 1 : 0;
-        newStats.hostNeededSat += user.confirmation.hostNeededSat ? 1 : 0;
-        newStats.hostNeededUnique += user.confirmation.hostNeededFri || user.confirmation.hostNeededSat ? 1 : 0;
+        // newStats.hostNeededFri += user.confirmation.hostNeededFri ? 1 : 0;
+        // newStats.hostNeededSat += user.confirmation.hostNeededSat ? 1 : 0;
+        // newStats.hostNeededUnique += user.confirmation.hostNeededFri || user.confirmation.hostNeededSat ? 1 : 0;
 
-        newStats.hostNeededFemale
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "F" ? 1 : 0;
-        newStats.hostNeededMale
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "M" ? 1 : 0;
-        newStats.hostNeededOther
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "O" ? 1 : 0;
-        newStats.hostNeededNone
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "N" ? 1 : 0;
+        // newStats.hostNeededFemale
+        //   += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "F" ? 1 : 0;
+        // newStats.hostNeededMale
+        //   += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "M" ? 1 : 0;
+        // newStats.hostNeededOther
+        //   += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "O" ? 1 : 0;
+        // newStats.hostNeededNone
+        //   += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "N" ? 1 : 0;
 
         // Dietary restrictions
         if (user.confirmation.dietaryRestrictions){
