@@ -73,17 +73,17 @@ var confirmation = {
   website: String,
   resume: String,
 
-  needsReimbursement: Boolean,
-  address: {
-    name: String,
-    line1: String,
-    line2: String,
-    city: String,
-    state: String,
-    zip: String,
-    country: String
-  },
-  receipt: String,
+  // needsReimbursement: Boolean,
+  // address: {
+  //   name: String,
+  //   line1: String,
+  //   line2: String,
+  //   city: String,
+  //   state: String,
+  //   zip: String,
+  //   country: String
+  // },
+  // receipt: String,
 
   hostNeededFri: Boolean,
   hostNeededSat: Boolean,
@@ -143,10 +143,10 @@ var status = {
   confirmBy: {
     type: Number
   },
-  reimbursementGiven: {
-    type: Boolean,
-    default: false
-  }
+  // reimbursementGiven: {
+  //   type: Boolean,
+  //   default: false
+  // }
 };
 
 // define the schema for our admin model

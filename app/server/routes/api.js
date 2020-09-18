@@ -183,7 +183,7 @@ module.exports = function(router) {
                   'profile.description','profile.essay','status.name',
                   'status.completedProfile','status.admitted',
                   'status.confirmed','status.declined','status.checkedIn',
-                  'status.reimbursementGiven',
+                  // 'status.reimbursementGiven',
                 ];
     var fs = require('fs');
 
