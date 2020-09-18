@@ -64,8 +64,8 @@ var confirmation = {
       values: 'XS S M L XL XXL WXS WS WM WL WXL WXXL'.split(' ')
     }
   },
-  wantsHardware: Boolean,
-  hardware: String,
+  // wantsHardware: Boolean,
+  // hardware: String,
 
   major: String,
   github: String,

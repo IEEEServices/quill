@@ -316,14 +316,15 @@ angular.module('reg')
               },{
                 name: 'Website',
                 value: user.confirmation.website
-              },{
-                name: 'Needs Hardware',
-                value: user.confirmation.wantsHardware,
-                type: 'boolean'
-              },{
-                name: 'Hardware Requested',
-                value: user.confirmation.hardware
-              }
+              },
+              // {
+              //   name: 'Needs Hardware',
+              //   value: user.confirmation.wantsHardware,
+              //   type: 'boolean'
+              // },{
+              //   name: 'Hardware Requested',
+              //   value: user.confirmation.hardware
+              // }
             ]
           },
           // {
