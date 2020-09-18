@@ -51,8 +51,5 @@
         },
         "DATABASE": "mongodb+srv://<user>:<password>@<host>?retryWrites=true&w=majority"
     },
-    "addons": [
-        "mLab"
-    ],
     "keywords": ["quill", "node", "express", "mongo"]
 }
