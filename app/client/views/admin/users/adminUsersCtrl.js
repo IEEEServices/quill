@@ -20,7 +20,7 @@ angular.module('reg')
       // Populate the size of the modal for when it appears, with an arbitrary user.
       $scope.selectedUser = {};
       $scope.selectedUser.sections = generateSections({status: '', confirmation: {
-        dietaryRestrictions: []
+        // dietaryRestrictions: []
       }, profile: ''});
 
       function updatePage(data){
@@ -301,9 +301,9 @@ angular.module('reg')
               {
                 name: 'Phone Number',
                 value: user.confirmation.phoneNumber
-              },{
-                name: 'Dietary Restrictions',
-                value: user.confirmation.dietaryRestrictions.join(', ')
+              // },{
+              //   name: 'Dietary Restrictions',
+              //   value: user.confirmation.dietaryRestrictions.join(', ')
               // },{
               //   name: 'Shirt Size',
               //   value: user.confirmation.shirtSize

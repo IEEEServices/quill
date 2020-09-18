@@ -55,7 +55,7 @@ function calculateStats(){
     //   'None': 0
     // },
 
-    dietaryRestrictions: {},
+    // dietaryRestrictions: {},
 
     // hostNeededFri: 0,
     // hostNeededSat: 0,
@@ -171,14 +171,14 @@ function calculateStats(){
         //   += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "N" ? 1 : 0;
 
         // Dietary restrictions
-        if (user.confirmation.dietaryRestrictions){
-          user.confirmation.dietaryRestrictions.forEach(function(restriction){
-            if (!newStats.dietaryRestrictions[restriction]){
-              newStats.dietaryRestrictions[restriction] = 0;
-            }
-            newStats.dietaryRestrictions[restriction] += 1;
-          });
-        }
+        // if (user.confirmation.dietaryRestrictions){
+        //   user.confirmation.dietaryRestrictions.forEach(function(restriction){
+        //     if (!newStats.dietaryRestrictions[restriction]){
+        //       newStats.dietaryRestrictions[restriction] = 0;
+        //     }
+        //     newStats.dietaryRestrictions[restriction] += 1;
+        //   });
+        // }
 
         // Count checked in
         newStats.checkedIn += user.status.checkedIn ? 1 : 0;
@@ -186,15 +186,15 @@ function calculateStats(){
         callback(); // let async know we've finished
       }, function() {
         // Transform dietary restrictions into a series of objects
-        var restrictions = [];
-        _.keys(newStats.dietaryRestrictions)
-          .forEach(function(key){
-            restrictions.push({
-              name: key,
-              count: newStats.dietaryRestrictions[key],
-            });
-          });
-        newStats.dietaryRestrictions = restrictions;
+        // var restrictions = [];
+        // _.keys(newStats.dietaryRestrictions)
+        //   .forEach(function(key){
+        //     restrictions.push({
+        //       name: key,
+        //       count: newStats.dietaryRestrictions[key],
+        //     });
+        //   });
+        // newStats.dietaryRestrictions = restrictions;
 
         // Transform schools into an array of objects
         var schools = [];

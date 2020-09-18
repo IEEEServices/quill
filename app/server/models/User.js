@@ -57,7 +57,7 @@ var profile = {
 // Only after confirmed
 var confirmation = {
   phoneNumber: String,
-  dietaryRestrictions: [String],
+  // dietaryRestrictions: [String],
   // shirtSize: {
   //   type: String,
   //   enum: {
