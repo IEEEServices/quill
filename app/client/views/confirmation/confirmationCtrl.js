@@ -71,15 +71,15 @@ angular.module('reg')
         // Semantic-UI form validation
         $('.ui.form').form({
           fields: {
-            shirt: {
-              identifier: 'shirt',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please give us a shirt size!'
-                }
-              ]
-            },
+            // shirt: {
+            //   identifier: 'shirt',
+            //   rules: [
+            //     {
+            //       type: 'empty',
+            //       prompt: 'Please give us a shirt size!'
+            //     }
+            //   ]
+            // },
             phone: {
               identifier: 'phone',
               rules: [

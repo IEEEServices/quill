@@ -39,21 +39,21 @@ function calculateStats(){
     confirmedOther: 0,
     confirmedNone: 0,
 
-    shirtSizes: {
-      'XS': 0,
-      'S': 0,
-      'M': 0,
-      'L': 0,
-      'XL': 0,
-      'XXL': 0,
-      'WXS': 0,
-      'WS': 0,
-      'WM': 0,
-      'WL': 0,
-      'WXL': 0,
-      'WXXL': 0,
-      'None': 0
-    },
+    // shirtSizes: {
+    //   'XS': 0,
+    //   'S': 0,
+    //   'M': 0,
+    //   'L': 0,
+    //   'XL': 0,
+    //   'XXL': 0,
+    //   'WXS': 0,
+    //   'WS': 0,
+    //   'WM': 0,
+    //   'WL': 0,
+    //   'WXL': 0,
+    //   'WXXL': 0,
+    //   'None': 0
+    // },
 
     dietaryRestrictions: {},
 
@@ -152,9 +152,9 @@ function calculateStats(){
         // }
 
         // Count shirt sizes
-        if (user.confirmation.shirtSize in newStats.shirtSizes){
-          newStats.shirtSizes[user.confirmation.shirtSize] += 1;
-        }
+        // if (user.confirmation.shirtSize in newStats.shirtSizes){
+        //   newStats.shirtSizes[user.confirmation.shirtSize] += 1;
+        // }
 
         // Host needed counts
         // newStats.hostNeededFri += user.confirmation.hostNeededFri ? 1 : 0;
