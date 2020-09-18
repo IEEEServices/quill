@@ -75,7 +75,7 @@ function calculateStats(){
   };
 
   User
-    .find({})
+    .find({admin: false})
     .exec(function(err, users){
       if (err || !users){
         throw err;
