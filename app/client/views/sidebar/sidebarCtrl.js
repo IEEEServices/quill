@@ -11,14 +11,15 @@ angular.module('reg')
     'AuthService',
     'Session',
     'EVENT_INFO',
-    function($rootScope, $scope, settings, Utils, AuthService, Session, EVENT_INFO){
+    'settings',
+    function($rootScope, $scope, settings, Utils, AuthService, Session, EVENT_INFO, settings){
 
       var settings = settings.data;
       var user = $rootScope.currentUser;
 
       $scope.EVENT_INFO = EVENT_INFO;
 
-      $scope.pastConfirmation = Utils.isAfter(user.status.confirmBy);
+      $scope.pastConfirmation = Utils.isAfter(settings.timeConfirm);
 
       $scope.logout = function(){
         AuthService.logout();

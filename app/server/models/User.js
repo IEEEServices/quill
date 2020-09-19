@@ -145,9 +145,9 @@ var status = {
   checkInTime: {
     type: Number,
   },
-  confirmBy: {
-    type: Number
-  },
+  // confirmBy: {
+  //   type: Number
+  // },
   // reimbursementGiven: {
   //   type: Boolean,
   //   default: false

@@ -328,39 +328,47 @@ UserController.updateProfileById = function (id, profile, callback){
  */
 UserController.updateConfirmationById = function (id, confirmation, callback){
 
-  User.findById(id).exec(function(err, user){
 
-    if(err || !user){
+  Settings.getRegistrationTimes(function(err, times) {
+    if (err || !times) {
       return callback(err);
     }
 
-    // Make sure that the user followed the deadline, but if they're already confirmed
-    // that's okay.
-    if (Date.now() >= user.status.confirmBy && !user.status.confirmed){
-      return callback({
-        message: "You've missed the confirmation deadline."
-      });
-    }
+    User.findById(id).exec(function(err, user){
 
-    // You can only confirm acceptance if you're admitted and haven't declined.
-    User.findOneAndUpdate({
-      '_id': id,
-      'verified': true,
-      'status.admitted': true,
-      'status.declined': {$ne: true}
-    },
-      {
-        $set: {
-          'lastUpdated': Date.now(),
-          'confirmation': confirmation,
-          'status.confirmed': true,
-        }
-      }, {
-        new: true
+      if(err || !user){
+        return callback(err);
+      }
+  
+      // Make sure that the user followed the deadline, but if they're already confirmed
+      // that's okay.
+      if (Date.now() >= times.timeConfirm && !user.status.confirmed){
+        return callback({
+          message: "You've missed the confirmation deadline."
+        });
+      }
+  
+      // You can only confirm acceptance if you're admitted and haven't declined.
+      User.findOneAndUpdate({
+        '_id': id,
+        'verified': true,
+        'status.admitted': true,
+        'status.declined': {$ne: true}
       },
-      callback);
-
+        {
+          $set: {
+            'lastUpdated': Date.now(),
+            'confirmation': confirmation,
+            'status.confirmed': true,
+          }
+        }, {
+          new: true
+        },
+        callback);
+  
+    });
   });
+
 };
 
 /**
@@ -648,7 +656,7 @@ UserController.admitUser = function(id, user, callback){
         $set: {
           'status.admitted': true,
           'status.admittedBy': user.email,
-          'status.confirmBy': times.timeConfirm
+          // 'status.confirmBy': times.timeConfirm
         }
       }, {
         new: true

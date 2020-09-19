@@ -8,13 +8,14 @@ angular.module('reg')
     'currentUser',
     'Utils',
     'UserService',
-    function($scope, $rootScope, $state, currentUser, Utils, UserService){
+    'settings',
+    function($scope, $rootScope, $state, currentUser, Utils, UserService, settings){
 
       // Set up the user
       var user = currentUser.data;
       $scope.user = user;
 
-      $scope.pastConfirmation = Date.now() > user.status.confirmBy;
+      $scope.pastConfirmation = Date.now() > settings.data.timeConfirm;
 
       $scope.formatTime = Utils.formatTime;
 

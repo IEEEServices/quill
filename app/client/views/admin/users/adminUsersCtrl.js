@@ -259,9 +259,9 @@ angular.module('reg')
                 name: 'Last Updated',
                 value: formatTime(user.lastUpdated)
               },{
-                name: 'Confirm By',
-                value: formatTime(user.status.confirmBy) || 'N/A'
-              },{
+              //   name: 'Confirm By',
+              //   value: formatTime(user.status.confirmBy) || 'N/A'
+              // },{
                 name: 'Checked In',
                 value: formatTime(user.status.checkInTime) || 'N/A'
               },{
