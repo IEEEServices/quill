@@ -227,7 +227,7 @@ var schema = new mongoose.Schema({
 
   status: status,
 
-});
+}, { minimize: false });
 
 schema.set('toJSON', {
   virtuals: true
