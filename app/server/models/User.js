@@ -25,12 +25,12 @@ var profile = {
     max: 150,
   },
 
-  graduationYear: {
-    type: String,
-    enum: {
-      values: '2021 2022 2023 2024'.split(' '),
-    }
-  },
+  // graduationYear: {
+  //   type: String,
+  //   enum: {
+  //     values: '2021 2022 2023 2024'.split(' '),
+  //   }
+  // },
 
   description: {
     type: String,
@@ -333,7 +333,7 @@ schema.statics.validateProfile = function(profile, cb){
     profile.name.length > 0 &&
     profile.adult &&
     profile.school.length > 0 &&
-    ['2021', '2022', '2023', '2024'].indexOf(profile.graduationYear) > -1 &&
+    // ['2021', '2022', '2023', '2024'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
 };

@@ -285,9 +285,9 @@ angular.module('reg')
                 name: 'School',
                 value: user.profile.school
               },{
-                name: 'Graduation Year',
-                value: user.profile.graduationYear
-              },{
+              //   name: 'Graduation Year',
+              //   value: user.profile.graduationYear
+              // },{
                 name: 'Description',
                 value: user.profile.description
               },{

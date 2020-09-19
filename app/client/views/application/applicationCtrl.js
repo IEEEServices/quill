@@ -126,15 +126,15 @@ angular.module('reg')
                 }
               ]
             },
-            year: {
-              identifier: 'year',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please select your graduation year.'
-                }
-              ]
-            },
+            // year: {
+            //   identifier: 'year',
+            //   rules: [
+            //     {
+            //       type: 'empty',
+            //       prompt: 'Please select your graduation year.'
+            //     }
+            //   ]
+            // },
             gender: {
               identifier: 'gender',
               rules: [
