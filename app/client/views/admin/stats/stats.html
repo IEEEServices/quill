@@ -211,6 +211,24 @@
       </div>
     </div>
     <div class="ui divider"></div>
+      <div class="ui list">
+        <div class="item">
+          <strong>18-24:</strong> {{stats.demo.ageGroups['18-24']}} ({{stats.demo.ageGroups['18-24'] / stats.total * 100 | number: 1}}%)
+        </div>
+        <div class="item">
+          <strong>25-34:</strong> {{stats.demo.ageGroups['25-34']}} ({{stats.demo.ageGroups['25-34'] / stats.total * 100 | number: 1}}%)
+        </div>
+        <div class="item">
+         <strong>35-44:</strong> {{stats.demo.ageGroups['35-44']}} ({{stats.demo.ageGroups['35-44']/ stats.total * 100 | number: 1}}%)
+        </div>
+        <div class="item">
+          <strong>45-54:</strong> {{stats.demo.ageGroups['45-54']}} ({{stats.demo.ageGroups['45-54'] / stats.total * 100 | number: 1}}%)
+        </div>
+        <div class="item">
+          <strong>55+:</strong> {{stats.demo.ageGroups['55+']}} ({{stats.demo.ageGroups['55+'] / stats.total * 100 | number: 1}}%)
+        </div>
+      </div>
+    <div class="ui divider"></div>
       <!-- <div class="ui list">
         <div class="item">
           <strong>Fresh:</strong> {{stats.demo.year['2024']}} ({{stats.demo.year['2024'] / stats.total * 100 | number: 1}}%)
