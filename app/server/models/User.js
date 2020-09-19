@@ -32,6 +32,11 @@ var profile = {
   //   }
   // },
 
+  dob: {
+    type: String,
+    set: d => new Date(d).toLocaleDateString("en-US")
+  },
+
   description: {
     type: String,
     min: 0,
@@ -328,11 +333,23 @@ schema.statics.getByToken = function(token, callback){
   }.bind(this));
 };
 
+function getAge(dateString) {
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+  }
+  return age;
+}
+
 schema.statics.validateProfile = function(profile, cb){
   return cb(!(
     profile.name.length > 0 &&
     profile.adult &&
     profile.school.length > 0 &&
+    getAge(profile.dob) >= 18 &&
     // ['2021', '2022', '2023', '2024'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
