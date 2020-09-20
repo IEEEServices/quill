@@ -15,6 +15,13 @@
     transform: translateY(-50%);
 
     > .content {
+
+      > .event-duration {
+        text-align: center;
+        color: #272727;
+        font-family:'Montserrat', Helvetica;
+      }
+
       max-width: 320px;
       margin: 0 auto;
 
