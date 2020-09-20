@@ -15,8 +15,12 @@ angular.module('reg')
       // Start state for login
       $scope.loginState = 'login';
 
-      function onSuccess() {
-        $state.go('app.dashboard');
+      function onSuccess(user) {
+        if (user.admin) {
+          $state.go('app.admin.stats');
+        } else {
+          $state.go('app.dashboard');
+        }
       }
 
       function onError(data){
