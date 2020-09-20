@@ -12,15 +12,15 @@ var schema = new mongoose.Schema({
   status: String,
   timeOpen: {
     type: Number,
-    default: 0
+    default: Date.now()
   },
   timeClose: {
     type: Number,
-    default: Date.now() + 31104000000 // Add a year from now.
+    default: Date.parse('2020-10-15T23:59:59+00:00')
   },
   timeConfirm: {
     type: Number,
-    default: 604800000 // Date of confirmation
+    default: Date.parse('2020-10-15T23:59:59+00:00')
   },
   whitelistedEmails: {
     type: [String],
