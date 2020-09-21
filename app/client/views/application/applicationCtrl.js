@@ -15,6 +15,7 @@ angular.module('reg')
 
       // Set up the user
       $scope.user = currentUser.data;
+      $scope.userBirth = new Date(Date.parse($scope.user.profile.dob));
 
       // Is the student from MIT?
       // $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
@@ -71,6 +72,8 @@ angular.module('reg')
       }
 
       function _updateUser(e){
+        $scope.user.profile.dob = new Date($scope.userBirth).toLocaleDateString("en-US");
+
         UserService
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .then(response => {
