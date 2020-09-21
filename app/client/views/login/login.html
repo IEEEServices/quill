@@ -38,6 +38,13 @@
                        placeholder="Password (at least 6 characters)"
                        ng-model="password" required>
               </div>
+              <div class="field" ng-show="registering">
+                <label>Confirm Password</label>
+                <input type="password"
+                       id='confirm-password'
+                       placeholder="Confirm Password"
+                       ng-model="confirmPassword">
+              </div>
               <div class="field">
                 <button id="login-password"
                         type="submit"

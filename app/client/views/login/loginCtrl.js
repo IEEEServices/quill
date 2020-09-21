@@ -15,6 +15,8 @@ angular.module('reg')
       // Start state for login
       $scope.loginState = 'login';
 
+      $scope.registering = false;
+
       function onSuccess(user) {
         if (user.admin) {
           $state.go('app.admin.stats');
@@ -33,14 +35,23 @@ angular.module('reg')
 
       $scope.login = function(){
         resetError();
+        $scope.registering = false;
         AuthService.loginWithPassword(
           $scope.email, $scope.password, onSuccess, onError);
       };
 
       $scope.register = function(){
         resetError();
-        AuthService.register(
-          $scope.email, $scope.password, onSuccess, onError);
+        if (!$scope.registering) {
+          $scope.registering = true;
+        } else {
+          if ($scope.password != $scope.confirmPassword) {
+            swal("Oops...", "Passwords do not match.", "error");
+          } else {
+            AuthService.register(
+              $scope.email, $scope.password, $scope.confirmPassword, onSuccess, onError);
+          }
+        }
       };
 
       $scope.setLoginState = function(state) {

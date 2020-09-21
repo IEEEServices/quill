@@ -69,6 +69,11 @@ module.exports = function(router){
       // Register with an email and password
       var email = req.body.email;
       var password = req.body.password;
+      var confirmPassword = req.body.confirmPassword;
+
+      if (password != confirmPassword) {
+        return res.status(400).send("Passwords do not match.");
+      }
 
       UserController.createUser(email, password,
         function(err, user){
