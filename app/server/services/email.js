@@ -59,6 +59,7 @@ function sendOne(templateName, options, data, callback) {
   data.hackathonName = HACKATHON_NAME;
   data.twitterHandle = TWITTER_HANDLE;
   data.facebookHandle = FACEBOOK_HANDLE;
+  data.emailContact = EMAIL_CONTACT;
 
   email.send({
     locals: data,
@@ -89,7 +90,7 @@ controller.sendVerificationEmail = function(email, token, callback) {
 
   var options = {
     to: email,
-    subject: "["+HACKATHON_NAME+"] - Verify your email"
+    subject: "["+HACKATHON_NAME+"] - Email verification"
   };
 
   var locals = {
