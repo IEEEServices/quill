@@ -304,9 +304,9 @@ angular.module('reg')
               // },{
               //   name: 'Dietary Restrictions',
               //   value: user.confirmation.dietaryRestrictions.join(', ')
-              },{
-                name: 'Shirt Size',
-                value: user.confirmation.shirtSize
+              // },{
+              //   name: 'Shirt Size',
+              //   value: user.confirmation.shirtSize
               },{
                 name: 'Major',
                 value: user.confirmation.major
