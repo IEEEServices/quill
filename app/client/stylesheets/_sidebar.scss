@@ -103,6 +103,7 @@
       opacity: 1;
       @include transform(translate3d(0,0,0));
       padding: 12px;
+      text-align: center;
     }
   }
 }
