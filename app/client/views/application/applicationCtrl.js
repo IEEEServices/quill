@@ -15,6 +15,7 @@ angular.module('reg')
 
       // Set up the user
       $scope.user = currentUser.data;
+      $scope.userAdmitted = $scope.user.status && $scope.user.status.admitted;
       $scope.userBirth = new Date(Date.parse($scope.user.profile.dob));
 
       // Is the student from MIT?
