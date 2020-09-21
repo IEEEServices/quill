@@ -130,6 +130,15 @@ angular.module('reg')
                 }
               ]
             },
+            dateOfBirth: {
+              identifier: 'dateOfBirth',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select your Date of Birth.'
+                }
+              ]
+            },
             // year: {
             //   identifier: 'year',
             //   rules: [
