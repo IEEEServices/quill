@@ -40,6 +40,11 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                                 | Verify Me
                           tr
                             td.bodyContent(valign='top', style='text-align: center', mc:edit='body_content00')
+                              | If you can't click the link, please copy below the link and manually paste it to the browser to verify.
+                              br
+                              | #{verifyUrl}
+                          tr
+                            td.bodyContent(valign='top', style='text-align: center', mc:edit='body_content00')
                               | Thanks,
                               br
                               |                                               The #{hackathonName} Team
@@ -56,7 +61,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                               a(href='mailto:#{emailAddress}') Email Us
                           tr
                             td.footerContent(valign='top', style='padding-top:0;', mc:edit='footer_content01')
-                              em Copyright © #{hackathonName} 2017, All rights reserved.
+                              em Copyright © #{hackathonName} 2020, All rights reserved.
                               br
                       // // END FOOTER
                       // // END TEMPLATE
