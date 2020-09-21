@@ -90,33 +90,33 @@ angular.module('reg')
                 }
               ]
             },
-            signatureLiability: {
-              identifier: 'signatureLiabilityWaiver',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please type your digital signature.'
-                }
-              ]
-            },
-            signaturePhotoRelease: {
-              identifier: 'signaturePhotoRelease',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please type your digital signature.'
-                }
-              ]
-            },
-            signatureCodeOfConduct: {
-              identifier: 'signatureCodeOfConduct',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please type your digital signature.'
-                }
-              ]
-            },
+            // signatureLiability: {
+            //   identifier: 'signatureLiabilityWaiver',
+            //   rules: [
+            //     {
+            //       type: 'empty',
+            //       prompt: 'Please type your digital signature.'
+            //     }
+            //   ]
+            // },
+            // signaturePhotoRelease: {
+            //   identifier: 'signaturePhotoRelease',
+            //   rules: [
+            //     {
+            //       type: 'empty',
+            //       prompt: 'Please type your digital signature.'
+            //     }
+            //   ]
+            // },
+            // signatureCodeOfConduct: {
+            //   identifier: 'signatureCodeOfConduct',
+            //   rules: [
+            //     {
+            //       type: 'empty',
+            //       prompt: 'Please type your digital signature.'
+            //     }
+            //   ]
+            // },
           }
         });
       }
