@@ -26,11 +26,15 @@
         "HACKATHON_NAME": "Hackathon",
         "TWITTER_HANDLE": {
             "description": "Everything after https://twitter.com/",
-            "value": "hackathon"
+            "value": ""
         },
         "FACEBOOK_HANDLE": {
             "description": "Everything after https://facebook.com/",
-            "value": "hackathon"
+            "value": ""
+        },
+        "SLACK_LINK": {
+            "description": "Link to Slack Channel",
+            "value": ""
         },
         "EMAIL_CONTACT": {
             "description": "Used to send verification, registration, and confirmation emails",

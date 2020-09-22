@@ -11,6 +11,7 @@ var HACKATHON_NAME = process.env.HACKATHON_NAME;
 var EMAIL_ADDRESS = process.env.EMAIL_ADDRESS;
 var TWITTER_HANDLE = process.env.TWITTER_HANDLE;
 var FACEBOOK_HANDLE = process.env.FACEBOOK_HANDLE;
+var SLACK_LINK = process.env.SLACK_LINK;
 
 var EMAIL_HOST = process.env.EMAIL_HOST;
 var EMAIL_USER = process.env.EMAIL_USER;
@@ -57,9 +58,10 @@ function sendOne(templateName, options, data, callback) {
   data.emailHeaderImage = EMAIL_HEADER_IMAGE;
   data.emailAddress = EMAIL_ADDRESS;
   data.hackathonName = HACKATHON_NAME;
-  data.twitterHandle = TWITTER_HANDLE;
-  data.facebookHandle = FACEBOOK_HANDLE;
+  data.twitterHandle = TWITTER_HANDLE.trim().length > 0 ? TWITTER_HANDLE : null;
+  data.facebookHandle = FACEBOOK_HANDLE.trim().length > 0 ? FACEBOOK_HANDLE : null;
   data.emailContact = EMAIL_CONTACT;
+  data.slackLink = SLACK_LINK.trim().length > 0 ? SLACK_LINK : null;
 
   email.send({
     locals: data,

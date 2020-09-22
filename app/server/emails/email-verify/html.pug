@@ -56,11 +56,17 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                         tbody
                           tr
                             td.footerContent(valign='top', mc:edit='footer_content00')
-                              a(href='https://twitter.com/' + twitterHandle) Follow on Twitter
-                              br
-                              a(href='https://facebook.com/' + facebookHandle) Like on Facebook
-                              br
-                              a(href='mailto:#{emailAddress}') Email Us
+                              if twitterHandle
+                                a(href='https://twitter.com/' + twitterHandle) Follow on Twitter
+                                br
+                              if facebookHandle
+                                a(href='https://facebook.com/' + facebookHandle) Like on Facebook
+                                br
+                              if emailAddress
+                                a(href='mailto:#{emailAddress}') Email Us
+                                br
+                              if slackLink
+                                a(href=slackLink) Slack for Q&A
                           tr
                             td.footerContent(valign='top', style='padding-top:0;', mc:edit='footer_content01')
                               em Copyright © #{hackathonName} 2020, All rights reserved.
