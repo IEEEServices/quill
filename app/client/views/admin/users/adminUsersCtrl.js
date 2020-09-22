@@ -282,8 +282,17 @@ angular.module('reg')
                 name: 'Gender',
                 value: user.profile.gender
               },{
+                name: 'Date of Birth',
+                value: user.profile.dob
+              },{
+                name: 'Country',
+                value: user.profile.country
+              },{
                 name: 'School',
                 value: user.profile.school
+              },{
+                name: 'Department',
+                value: user.profile.department
               },{
               //   name: 'Graduation Year',
               //   value: user.profile.graduationYear

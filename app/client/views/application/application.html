@@ -29,9 +29,12 @@
 
         <div class="field">
           <label> Country </label>
-          <input type="text"
-                 name="country"
-                 ng-model="user.profile.country">
+          <div id="country" class="ui search">
+            <div class="ui input">
+              <input class="prompt" type="text" placeholder="Country" name="country" ng-model="user.profile.country">                
+            </div>
+            <div class="results"></div>
+          </div>
         </div>
 
         <div class="field" ng-show="autoFilledSchool">

@@ -72,6 +72,29 @@ angular.module('reg')
                 }
               });
           });
+
+          $http
+            .get('/assets/countries.csv')
+            .then(function(res){
+              $scope.countries = res.data.split('\n');
+              $scope.countries.push('Other');
+  
+              var content = [];
+  
+              for(i = 0; i < $scope.countries.length; i++) {
+                $scope.countries[i] = $scope.countries[i].trim();
+                content.push({title: $scope.countries[i]});
+              }
+
+              $('#country.ui.search')
+                .search({
+                  source: content,
+                  cache: true,
+                  onSelect: function(result, response) {
+                    $scope.user.profile.country = result.title.trim();
+                  }
+                });
+            });
       }
 
       function _updateUser(e){
