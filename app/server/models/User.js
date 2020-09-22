@@ -362,6 +362,8 @@ schema.statics.validateProfile = function(profile, cb){
     profile.adult &&
     profile.school.length > 0 &&
     getAge(profile.dob) >= 18 &&
+    profile.country.length > 0 &&
+    profile.department.length > 0 &&
     // ['2021', '2022', '2023', '2024'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));

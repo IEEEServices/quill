@@ -64,7 +64,7 @@ angular.module('reg')
               $state.go("app.dashboard");
             });
           }, response => {
-            swal("Uh oh!", "Something went wrong.", "error");
+            swal("Uh oh!", "Error: " + response.data.message, "error");
           });
       }
 
