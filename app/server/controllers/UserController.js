@@ -281,7 +281,7 @@ UserController.updateProfileById = function (id, profile, callback){
 
     User.findById(id).exec(function(err, user) {
 
-      if (err || (user.status && user.status.admitted)) {
+      if (err || (user.status && user.status.admitted && user.status.completedProfile)) {
         return callback({message: 'cannot update profile after being admitted'});
       }
 
