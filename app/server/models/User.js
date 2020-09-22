@@ -84,7 +84,7 @@ var confirmation = {
   // wantsHardware: Boolean,
   // hardware: String,
 
-  major: String,
+  // major: String,
   github: String,
   twitter: String,
   website: String,
