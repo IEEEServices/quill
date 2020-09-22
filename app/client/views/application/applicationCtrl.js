@@ -32,6 +32,8 @@ angular.module('reg')
 
       $scope.regIsClosed = Date.now() > settings.data.timeClose;
 
+      $scope.hackStart = new Date(settings.data.hackStart).toLocaleDateString("en-US");
+
       /**
        * TODO: JANK WARNING
        */

@@ -155,6 +155,9 @@ angular.module('reg')
         resolve: {
           'user': function($stateParams, UserService){
             return UserService.get($stateParams.id);
+          },
+          settings: function(SettingsService){
+            return SettingsService.getPublicSettings();
           }
         }
       })

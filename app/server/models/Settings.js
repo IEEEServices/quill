@@ -1,5 +1,11 @@
 var mongoose = require('mongoose');
 
+var START_DATE = Date.parse(process.env.START_DATE);
+var END_DATE = Date.parse(process.env.END_DATE);
+var REG_START_DATE = process.env.REG_START_DATE ? Date.parse(process.env.REG_START_DATE) : Date.now();
+var REG_END_DATE = Date.parse(process.env.REG_END_DATE);
+var REG_CONF_DATE = Date.parse(process.env.REG_CONF_DATE);
+
 /**
  * Settings Schema!
  *
@@ -12,15 +18,23 @@ var schema = new mongoose.Schema({
   status: String,
   timeOpen: {
     type: Number,
-    default: Date.now()
+    default: REG_START_DATE
   },
   timeClose: {
     type: Number,
-    default: Date.parse('2020-10-15T23:59:59+00:00')
+    default: REG_END_DATE
   },
   timeConfirm: {
     type: Number,
-    default: Date.parse('2020-10-15T23:59:59+00:00')
+    default: REG_CONF_DATE
+  },
+  hackStart: {
+    type: Number,
+    default: START_DATE
+  },
+  hackEnd: {
+    type: Number,
+    default: END_DATE
   },
   whitelistedEmails: {
     type: [String],
@@ -68,7 +82,9 @@ schema.statics.getRegistrationTimes = function(callback){
       callback(err, {
         timeOpen: settings.timeOpen,
         timeClose: settings.timeClose,
-        timeConfirm: settings.timeConfirm
+        timeConfirm: settings.timeConfirm,
+        hackStart: settings.hackStart,
+        hackEnd: settings.hackEnd
       });
     });
 };

@@ -6,8 +6,10 @@ angular.module('reg')
     '$http',
     'user',
     'UserService',
-    function($scope, $http, User, UserService){
+    'settings',
+    function($scope, $http, User, UserService, settings){
       $scope.selectedUser = User.data;
+      $scope.hackStart = new Date(settings.data.hackStart).toLocaleDateString("en-US");
 
       // Populate the school dropdown
       populateSchools();
