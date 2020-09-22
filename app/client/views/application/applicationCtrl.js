@@ -141,6 +141,24 @@ angular.module('reg')
                 }
               ]
             },
+            country: {
+              identifier: 'country',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select your country.'
+                }
+              ]
+            },
+            department: {
+              identifier: 'department',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select your major/department.'
+                }
+              ]
+            },
             // year: {
             //   identifier: 'year',
             //   rules: [

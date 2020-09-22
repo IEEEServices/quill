@@ -89,6 +89,13 @@
                ng-model="selectedUser.profile.name">
       </div>
 
+      <div class="field">
+        <label> Country </label>
+        <input type="text"
+               name="country"
+               ng-model="selectedUser.profile.country">
+      </div>
+
       <div class="field" ng-show="autoFilledSchool">
         <label> School </label>
         <input class="ui input"
@@ -102,6 +109,20 @@
         <input class="ui input"
                name="school"
                ng-model="selectedUser.profile.school">
+      </div>
+
+      <div class="field">
+        <label> Major/Department </label>
+        <input type="text"
+               name="department"
+               ng-model="selectedUser.profile.department">
+      </div>
+
+      <div class="field">
+        <label>
+          Date of Birth
+        </label>
+        <input name="dateOfBirth" type="date" ng-model="userBirth">
       </div>
 
       <!-- <div class="field">

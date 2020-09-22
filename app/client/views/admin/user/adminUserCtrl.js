@@ -10,6 +10,7 @@ angular.module('reg')
     function($scope, $http, User, UserService, settings){
       $scope.selectedUser = User.data;
       $scope.hackStart = new Date(settings.data.hackStart).toLocaleDateString("en-US");
+      $scope.userBirth = new Date(Date.parse($scope.selectedUser.profile.dob));
 
       // Populate the school dropdown
       populateSchools();
@@ -35,6 +36,7 @@ angular.module('reg')
 
 
       $scope.updateProfile = function(){
+        $scope.selectedUser.profile.dob = new Date($scope.userBirth).toLocaleDateString("en-US");
         UserService
           .updateProfile($scope.selectedUser._id, $scope.selectedUser.profile)
           .then(response => {

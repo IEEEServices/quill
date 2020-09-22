@@ -25,6 +25,18 @@ var profile = {
     max: 150,
   },
 
+  country: {
+    type: String,
+    min: 1,
+    max: 150
+  },
+
+  department: {
+    type: String,
+    min: 1,
+    max: 150
+  },
+
   // graduationYear: {
   //   type: String,
   //   enum: {
