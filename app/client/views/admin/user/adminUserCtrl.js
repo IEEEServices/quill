@@ -1,4 +1,5 @@
 const swal = require('sweetalert');
+const flatpickr = require("flatpickr");
 
 angular.module('reg')
   .controller('AdminUserCtrl',[
@@ -10,7 +11,14 @@ angular.module('reg')
     function($scope, $http, User, UserService, settings){
       $scope.selectedUser = User.data;
       $scope.hackStart = new Date(settings.data.hackStart).toLocaleDateString("en-US");
-      $scope.userBirth = new Date(Date.parse($scope.selectedUser.profile.dob));
+      // $scope.userBirth = new Date(Date.parse($scope.selectedUser.profile.dob));
+      flatpickr("#selectedUserDob", {
+        disableMobile: "true",
+        defaultDate: new Date(Date.parse($scope.selectedUser.profile.dob)),
+        onChange: function(selectedDates, dateStr, instance) {
+          $scope.selectedUser.profile.dob = selectedDates[0].toLocaleDateString("en-US");
+        }
+      });
 
       // Populate the school dropdown
       populateSchools();
@@ -36,7 +44,7 @@ angular.module('reg')
 
 
       $scope.updateProfile = function(){
-        $scope.selectedUser.profile.dob = new Date($scope.userBirth).toLocaleDateString("en-US");
+        // $scope.selectedUser.profile.dob = new Date($scope.userBirth).toLocaleDateString("en-US");
         UserService
           .updateProfile($scope.selectedUser._id, $scope.selectedUser.profile)
           .then(response => {

@@ -1,5 +1,6 @@
 const angular = require("angular");
 const swal = require("sweetalert");
+const flatpickr = require("flatpickr");
 
 angular.module('reg')
   .controller('ApplicationCtrl', [
@@ -16,7 +17,14 @@ angular.module('reg')
       // Set up the user
       $scope.user = currentUser.data;
       $scope.userAdmitted = $scope.user.status && $scope.user.status.admitted && $scope.user.status.completedProfile;
-      $scope.userBirth = new Date(Date.parse($scope.user.profile.dob));
+      // $scope.userBirth = new Date(Date.parse($scope.user.profile.dob));
+      flatpickr("#userDob", {
+        disableMobile: "true",
+        defaultDate: new Date(Date.parse($scope.user.profile.dob)),
+        onChange: function(selectedDates, dateStr, instance) {
+          $scope.user.profile.dob = selectedDates[0].toLocaleDateString("en-US");
+        }
+      });
 
       // Is the student from MIT?
       // $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
@@ -98,7 +106,7 @@ angular.module('reg')
       }
 
       function _updateUser(e){
-        $scope.user.profile.dob = new Date($scope.userBirth).toLocaleDateString("en-US");
+        // $scope.user.profile.dob = new Date($scope.userBirth).toLocaleDateString("en-US");
 
         UserService
           .updateProfile(Session.getUserId(), $scope.user.profile)

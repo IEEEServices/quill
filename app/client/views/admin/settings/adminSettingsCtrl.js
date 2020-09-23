@@ -1,6 +1,7 @@
 const moment = require('moment');
 const showdown = require('showdown');
 const swal = require('sweetalert');
+const flatpickr = require("flatpickr");
 
 angular.module('reg')
   .controller('AdminSettingsCtrl', [
@@ -8,6 +9,30 @@ angular.module('reg')
     '$sce',
     'SettingsService',
     function($scope, $sce, SettingsService){
+      var timeOpen = flatpickr("#timeOpen", {
+        disableMobile: "true",
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        onChange: function(selectedDates, dateStr, instance) {
+          $scope.settings.timeOpen = new Date(dateStr);
+        }
+      });
+      var timeClose = flatpickr("#timeClose", {
+        disableMobile: "true",
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        onChange: function(selectedDates, dateStr, instance) {
+          $scope.settings.timeClose = new Date(dateStr);
+        }
+      });
+      var timeConfirm = flatpickr("#timeConfirm", {
+        disableMobile: "true",
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        onChange: function(selectedDates, dateStr, instance) {
+          $scope.settings.timeConfirm = new Date(dateStr);
+        }
+      });
 
       $scope.settings = {};
       SettingsService
@@ -20,8 +45,11 @@ angular.module('reg')
         $scope.loading = false;
          // Format the dates in settings.
         settings.timeOpen = new Date(settings.timeOpen);
+        timeOpen.setDate(settings.timeOpen);
         settings.timeClose = new Date(settings.timeClose);
+        timeClose.setDate(settings.timeClose);
         settings.timeConfirm = new Date(settings.timeConfirm);
+        timeConfirm.setDate(settings.timeConfirm);
 
         $scope.settings = settings;
       }
