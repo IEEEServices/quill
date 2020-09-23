@@ -21,7 +21,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                         tbody
                           tr
                             td.headerContent(valign='top')
-                              img#headerImage(src=emailHeaderImage, style='max-width:600px;', mc:label='header_image', mc:edit='header_image', mc:allowdesigner='', mc:allowtext='')
+                              img#headerImage(src=emailHeaderImage, style='width:100%;', mc:label='header_image', mc:edit='header_image', mc:allowdesigner='', mc:allowtext='')
                       // // END HEADER
                   tr
                     td(align='center', valign='top')
@@ -34,7 +34,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                               h3 #{subtitle}
                               |                                                 #{body}
                           tr
-                            td.bodyContent(valign='top', style='text-align: center', mc:edit='body_content00')
+                            td.bodyContent(valign='top', style='text-align: center;max-width:600px;', mc:edit='body_content00')
                               | Thanks,
                               br
                               |                                               The #{hackathonName} Team
@@ -56,7 +56,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                                 a(href='mailto:#{emailAddress}') Email Us
                                 br
                               if slackLink
-                                a(href=slackLink) Slack for Q&A
+                                a(href=`${slackLink}`) Slack for Q&A
                           tr
                             td.footerContent(valign='top', style='padding-top:0;', mc:edit='footer_content01')
                               em Copyright © #{hackathonName} 2020, All rights reserved.

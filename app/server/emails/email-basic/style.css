@@ -183,7 +183,7 @@ h4{
 */
 #templateHeader{
   /*@editable*/ background-color:#F4F4F4;
-  /*@editable*/ border-top:1px solid #FFFFFF;
+  /*@editable border-top:1px solid #FFFFFF;*/
   /*@editable*/ border-bottom:1px solid #CCCCCC;
 }
 
@@ -219,7 +219,7 @@ h4{
 
 #headerImage{
   height:auto;
-  max-width:600px;
+  /* max-width:600px; */
 }
 
 /* ========== Body Styles ========== */
@@ -231,7 +231,7 @@ h4{
 */
 #templateBody{
   /*@editable*/ background-color:#FFF;
-  /*@editable*/ border-top:1px solid #FFFFFF;
+  /*@editable border-top:1px solid #FFFFFF;*/
   /*@editable*/ border-bottom:1px solid #CCCCCC;
 }
 
@@ -287,7 +287,7 @@ h4{
 */
 #templateFooter{
   /*@editable*/ background-color:#F4F4F4;
-  /*@editable*/ border-top:1px solid #FFFFFF;
+  /*@editable border-top:1px solid #FFFFFF;*/
 }
 
 /**
@@ -394,7 +394,7 @@ h4{
   */
   #headerImage{
     height:auto !important;
-    /*@editable*/ max-width:600px !important;
+    /*@editable max-width:600px !important;*/
     /*@editable*/ width:100% !important;
   }
 
