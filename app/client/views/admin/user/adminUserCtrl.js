@@ -1,5 +1,5 @@
 const swal = require('sweetalert');
-const flatpickr = require("flatpickr");
+// const flatpickr = require("flatpickr");
 
 angular.module('reg')
   .controller('AdminUserCtrl',[
