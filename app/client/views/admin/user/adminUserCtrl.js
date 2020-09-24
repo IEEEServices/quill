@@ -12,13 +12,13 @@ angular.module('reg')
       $scope.selectedUser = User.data;
       $scope.hackStart = new Date(settings.data.hackStart).toLocaleDateString("en-US");
       // $scope.userBirth = new Date(Date.parse($scope.selectedUser.profile.dob));
-      flatpickr("#selectedUserDob", {
-        disableMobile: "true",
-        defaultDate: new Date(Date.parse($scope.selectedUser.profile.dob)),
-        onChange: function(selectedDates, dateStr, instance) {
-          $scope.selectedUser.profile.dob = selectedDates[0].toLocaleDateString("en-US");
-        }
-      });
+      // flatpickr("#selectedUserDob", {
+      //   disableMobile: "true",
+      //   defaultDate: new Date(Date.parse($scope.selectedUser.profile.dob)),
+      //   onChange: function(selectedDates, dateStr, instance) {
+      //     $scope.selectedUser.profile.dob = selectedDates[0].toLocaleDateString("en-US");
+      //   }
+      // });
 
       // Populate the school dropdown
       populateSchools();

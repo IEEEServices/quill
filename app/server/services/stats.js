@@ -2,16 +2,16 @@ var _ = require('underscore');
 var async = require('async');
 var User = require('../models/User');
 
-function getAge(dateString) {
-  var today = new Date();
-  var birthDate = new Date(dateString);
-  var age = today.getFullYear() - birthDate.getFullYear();
-  var m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-  }
-  return age;
-}
+// function getAge(dateString) {
+//   var today = new Date();
+//   var birthDate = new Date(dateString);
+//   var age = today.getFullYear() - birthDate.getFullYear();
+//   var m = today.getMonth() - birthDate.getMonth();
+//   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+//       age--;
+//   }
+//   return age;
+// }
 
 // In memory stats.
 var stats = {};
@@ -103,18 +103,18 @@ function calculateStats(){
 
       async.each(users, function(user, callback){
 
-        var age = getAge(user.profile.dob);
-        if (age < 25) {
-          newStats.demo.ageGroups['18-24'] += 1;
-        } else if (age < 35) {
-          newStats.demo.ageGroups['25-34'] += 1;
-        } else if (age < 45) {
-          newStats.demo.ageGroups['35-44'] += 1;
-        } else if (age < 55) {
-          newStats.demo.ageGroups['45-54'] += 1;
-        } else {
-          newStats.demo.ageGroups['55+'] += 1;
-        }
+        // var age = getAge(user.profile.dob);
+        // if (age < 25) {
+        //   newStats.demo.ageGroups['18-24'] += 1;
+        // } else if (age < 35) {
+        //   newStats.demo.ageGroups['25-34'] += 1;
+        // } else if (age < 45) {
+        //   newStats.demo.ageGroups['35-44'] += 1;
+        // } else if (age < 55) {
+        //   newStats.demo.ageGroups['45-54'] += 1;
+        // } else {
+        //   newStats.demo.ageGroups['55+'] += 1;
+        // }
 
         // Grab the email extension
         var email = user.email.split('@')[1];

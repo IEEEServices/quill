@@ -18,13 +18,13 @@ angular.module('reg')
       $scope.user = currentUser.data;
       $scope.userAdmitted = $scope.user.status && $scope.user.status.admitted && $scope.user.status.completedProfile;
       // $scope.userBirth = new Date(Date.parse($scope.user.profile.dob));
-      flatpickr("#userDob", {
-        disableMobile: "true",
-        defaultDate: new Date(Date.parse($scope.user.profile.dob)),
-        onChange: function(selectedDates, dateStr, instance) {
-          $scope.user.profile.dob = selectedDates[0].toLocaleDateString("en-US");
-        }
-      });
+      // flatpickr("#userDob", {
+      //   disableMobile: "true",
+      //   defaultDate: new Date(Date.parse($scope.user.profile.dob)),
+      //   onChange: function(selectedDates, dateStr, instance) {
+      //     $scope.user.profile.dob = selectedDates[0].toLocaleDateString("en-US");
+      //   }
+      // });
 
       // Is the student from MIT?
       // $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
@@ -163,15 +163,15 @@ angular.module('reg')
                 }
               ]
             },
-            dateOfBirth: {
-              identifier: 'dateOfBirth',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please select your Date of Birth.'
-                }
-              ]
-            },
+            // dateOfBirth: {
+            //   identifier: 'dateOfBirth',
+            //   rules: [
+            //     {
+            //       type: 'empty',
+            //       prompt: 'Please select your Date of Birth.'
+            //     }
+            //   ]
+            // },
             country: {
               identifier: 'country',
               rules: [

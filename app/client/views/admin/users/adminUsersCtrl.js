@@ -282,9 +282,9 @@ angular.module('reg')
                 name: 'Gender',
                 value: user.profile.gender
               },{
-                name: 'Date of Birth',
-                value: user.profile.dob
-              },{
+              //   name: 'Date of Birth',
+              //   value: user.profile.dob
+              // },{
                 name: 'Country',
                 value: user.profile.country
               },{
